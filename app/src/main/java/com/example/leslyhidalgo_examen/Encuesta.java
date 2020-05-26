@@ -12,9 +12,8 @@ import android.widget.RadioButton;
 
 public class Encuesta extends AppCompatActivity {
 
-    Bundle datoNombre;
-    EditText nombre, respEscrita;
-    EditText usuarioR, nombreR, cuotaR;
+    Bundle nombreRecibir, datosRecibir;
+    EditText nombreR, respEscrita, usuario, cuota;
     CheckBox cb1, cb2, cb3;
     RadioButton rb1, rb2;
     StringBuffer deportes = new StringBuffer();
@@ -25,10 +24,20 @@ public class Encuesta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.encuesta);
 
-        nombre = findViewById(R.id.etNombreU);
-        datoNombre = getIntent().getExtras();
-        String RecibirNombre = datoNombre.getString("nombreU");
-        nombre.setText(RecibirNombre);
+        usuario = findViewById(R.id.usuarioC);
+        datosRecibir = getIntent().getExtras();
+        String recibirUsuario = datosRecibir.getString("usuario");
+        usuario.setText(recibirUsuario);
+
+        cuota = findViewById(R.id.etCuota);
+        datosRecibir = getIntent().getExtras();
+        String recibirCuota = datosRecibir.getString("cuota");
+        cuota.setText(recibirCuota);
+
+        nombreR = findViewById(R.id.etNombreU);
+        nombreRecibir = getIntent().getExtras();
+        String RecibirNombre = nombreRecibir.getString("nombre");
+        nombreR.setText(RecibirNombre);
 
         respEscrita = findViewById(R.id.etRespuesta);
 
@@ -67,6 +76,14 @@ public class Encuesta extends AppCompatActivity {
     public void enviarR (View v){
         respuestas();
         Intent intentEnvio= new Intent(Encuesta.this,Resumen.class);
+
+        //Nombre
+        intentEnvio.putExtra("nombre",nombreR.getText().toString());
+        //Usuario
+        intentEnvio.putExtra("usuario",usuario.getText().toString());
+        //Cuota
+        intentEnvio.putExtra("cuota",cuota.getText().toString());
+
         intentEnvio.putExtra("respEscrita",respEscrita.getText().toString());
         intentEnvio.putExtra("deportes",deportes.toString());
         intentEnvio.putExtra("idioma",idioma.toString());

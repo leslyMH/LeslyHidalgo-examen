@@ -10,21 +10,21 @@ import android.widget.Toast;
 
 public class Registro extends AppCompatActivity {
 
-    Bundle datoRecibir;
-    EditText recibir, montoI, mesual, nombre, usuarioC, mensual;
+    Bundle usuarioRecibir;
+    EditText usuarioR, montoI, mensual, nombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registro);
 
-        recibir = findViewById(R.id.etConectado);
-        datoRecibir = getIntent().getExtras();
-        String RecibirDato = datoRecibir.getString("usuario");
-        recibir.setText(RecibirDato);
+        usuarioR = findViewById(R.id.etConectado);
+        usuarioRecibir = getIntent().getExtras();
+        String RecibirDato = usuarioRecibir.getString("usuario");
+        usuarioR.setText(RecibirDato);
 
         montoI = findViewById(R.id.etMonto);
-        mesual = findViewById(R.id.etMensual);
+        mensual = findViewById(R.id.etMensual);
         nombre = findViewById(R.id.etNombre);
 
     }
@@ -36,13 +36,15 @@ public class Registro extends AppCompatActivity {
         subtotal = resultado + recargo;
         pago = subtotal / 3;
 
-        mesual.setText(Double.toString(pago));
+        mensual.setText(Double.toString(pago));
     }
 
     public void Guardar(View v){
 
         Intent intentEnvio = new Intent (getApplicationContext(), Encuesta.class);
-        intentEnvio.putExtra("nombreU", nombre.getText().toString());
+        intentEnvio.putExtra("nombre", nombre.getText().toString());
+        intentEnvio.putExtra("usuario", usuarioR.getText().toString());
+        intentEnvio.putExtra("cuota", mensual.getText().toString());
         startActivity(intentEnvio);
 
         Toast.makeText(getApplicationContext(), "Elemento guardado con éxito", Toast.LENGTH_LONG).show();

@@ -10,6 +10,8 @@
     <string name="pagoMensual">Pago Mensual</string>
     <string name="btnCalcular">Calcular</string>
     <string name="btnGuardar">Guardar</string>
+    <string name="usuarioC">Usuario</string>
+    <string name="cuota">Monto a pagar</string>
     <string name="nombreU">Nombre</string>
     <string name="pregunta1">¿Porqué eligió este centro?</string>
     <string name="pregunta2">¿Qué deportes practica?</string>

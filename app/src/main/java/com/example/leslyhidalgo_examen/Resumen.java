@@ -8,9 +8,8 @@ import android.widget.TextView;
 
 public class Resumen extends AppCompatActivity {
 
-    Bundle infoRecibir, datoRecibir;
-    EditText deportes, idioma, respEscrita;
-    EditText usuario, nombre, cuota;
+    Bundle infoRecibir, datosRecibir;
+    EditText deportes, idioma, respEscrita, nombre, usuario, cuota;
     String deport, idiom, respuestaE;
 
     @Override
@@ -18,9 +17,25 @@ public class Resumen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resumen);
 
+        usuario = findViewById(R.id.et1);
+        nombre = findViewById(R.id.et2);
+        cuota = findViewById(R.id.et3);
+
         respEscrita = findViewById(R.id.et4);
         deportes = findViewById(R.id.et5);
         idioma =findViewById(R.id.et6);
+
+        datosRecibir = getIntent().getExtras();
+        String recibirNombre = datosRecibir.getString("nombre");
+        nombre.setText(recibirNombre);
+
+        datosRecibir = getIntent().getExtras();
+        String recibirUsuario = datosRecibir.getString("usuario");
+        usuario.setText(recibirUsuario);
+
+        datosRecibir = getIntent().getExtras();
+        String recibirCuota = datosRecibir.getString("cuota");
+        cuota.setText(recibirCuota);
 
         infoRecibir = getIntent().getExtras();
         respuestaE = infoRecibir.getString("respEscrita");
@@ -30,10 +45,6 @@ public class Resumen extends AppCompatActivity {
         respEscrita.setText(respuestaE);
         deportes.setText(deport);
         idioma.setText(idiom);
-
-        ///////////////////////////
-
-
     }
 }
 
