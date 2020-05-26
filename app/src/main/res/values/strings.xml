@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">LeslyHidalgo-examen</string>
+    <string name="orden">Ingresa usuario y contraseña</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="btnIngresar">Ingresar</string>
+    <string name="Uconectado">Usuario conectado</string>
+    <string name="nombre">Nombre</string>
+    <string name="montoInicial">Monto Inicial</string>
+    <string name="pagoMensual">Pago Mensual</string>
+    <string name="btnCalcular">Calcular</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="nombreU">Nombre</string>
+    <string name="pregunta1">¿Porqué eligió este centro?</string>
+    <string name="pregunta2">¿Qué deportes practica?</string>
+    <string name="cb1">Rugby</string>
+    <string name="cb2">Baloncesto</string>
+    <string name="cb3">Natación</string>
+    <string name="pregunta3">¿Está interesad@ en aprender otro idioma aparte de inglés?</string>
+    <string name="rb1">Sí</string>
+    <string name="rb2">No</string>
+    <string name="btnAceptar">Aceptar</string>
+    <string name="tituloV3">Resumen</string>
+    <string name="uConectado">Usuario</string>
+    <string name="uNombre">Nombre</string>
+    <string name="pago">Total a pagar</string>
+    <string name="respuesta1">Motivo de la elección del centro</string>
+    <string name="respuesta2">Deportes que practica</string>
+    <string name="respuesta3">Está interesado en aprender otro idioma</string>
 </resources>
